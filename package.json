@@ -1,0 +1,48 @@
+{
+  "name": "react-template-complex",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:fyg1234/react-template-complex.git",
+  "author": "feng",
+  "license": "MIT",
+  "scripts": {
+    "changelogs": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "prepare": "yarn prepare:commit-msg && yarn prepare:commit-lint",
+    "prepare:commit-msg": "husky install && husky add .husky/commit-msg \"yarn validate-commit-msg\" && commitizen init cz-conventional-changelog --save --save-exact",
+    "prepare:commit-lint": "husky add .husky/pre-commit \"yarn lint-staged\"",
+    "lint": "eslint src/**/*[.js,.vue,.jsx,.ts,.tsx]",
+    "lint:fix": "eslint src/**/*[.js,.vue,.jsx,.ts,.tsx] --fix"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.2",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json}": [
+      "eslint",
+      "git add"
+    ],
+    "*.{css,less,scss}": [
+      "eslint",
+      "git add"
+    ]
+  },
+  "dependencies": {}
+}

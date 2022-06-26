@@ -1,6 +1,5 @@
 # 创建一个模板项目
 
-
 ## 1. 初始化项目
 
 ```shell
@@ -29,7 +28,7 @@ yarn global add commitizen
 ```
 
 ```sh
-yarn add commitizen husky  validate-commit-msg conventional-changelog-cli --dev
+yarn add commitizen husky  validate-commit-msg conventional-changelog-cli -D
 ```
 
 - [commitizen](https://www.npmjs.com/package/commitizen)是一个格式化commit message的工具
@@ -83,7 +82,7 @@ yarn changelogs
 [Lint-staged](https://github.com/okonet/lint-staged)可以在commit之前对staged（添加之后）的文件执行一些命令
 
 ```sh
-yarn add lint-staged --dev
+yarn add lint-staged -d
 ```
 
 Lint-staged配置
@@ -100,7 +99,7 @@ Lint-staged配置
 ### 3.2 安装eslint以及代码转换工具
 
 ```sh
-yarn add eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin --dev
+yarn add eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin --D
 ```
 
 配置eslint规则
@@ -109,8 +108,8 @@ yarn add eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-p
 
 ```javascript
   "scripts": {
-    "lint": "eslint \"/**/*.{js,jsx,ts,tsx,css,less,scss,json}\"",
-    "lint:fix": "eslint \"/**/*.{js,jsx,ts,tsx,css,less,scss,json}\" --fix"
+    "lint": "eslint \"{client,server}/src/**/*.{js,jsx,ts,tsx,css,less,scss}\"",
+    "lint:fix": "eslint \"{client,server}/src/**/*.{js,jsx,ts,tsx,css,less,scss}\" --fix"
   },
 ```
 
